@@ -6,6 +6,7 @@ internal class Program
     {
         Console.WriteLine("Welcome to Snake and Ladder !");
        SnakeAndLadders snakeandladder = new  SnakeAndLadders(); //object
+        Console.WriteLine(snakeandladder.DieRoll()); 
 
    
 

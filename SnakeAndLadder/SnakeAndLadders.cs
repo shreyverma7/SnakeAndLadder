@@ -10,5 +10,13 @@ namespace SnakeAndLadder
     {
         //UC1 
         int position = 0;
+
+        //UC2
+        Random random = new Random();
+        public int DieRoll()
+        {
+            int diePosition = random.Next(1, 7); //random number between 1 to 6
+            return diePosition;
+        }
     }
 }
