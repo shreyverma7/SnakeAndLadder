@@ -33,7 +33,7 @@ namespace SnakeAndLadder
 
                 case LADDER:
                     int dieRoll = DieRoll();
-                    if (this.position + dieRoll <= WINNING_POSITION)
+                    if (this.position + dieRoll < WINNING_POSITION)
                     {
                         this.position += dieRoll;
                     }
