@@ -1,17 +1,16 @@
-﻿using SnakeAndLadder;
+﻿using System;
 
-internal class Program
+namespace SnakeAndLadder
 {
-    private static void Main(string[] args)
+    public class Program
     {
-        Console.WriteLine("Welcome to Snake and Ladder !");
-       SnakeAndLadders snakeandladder = new  SnakeAndLadders(); //object
-        Console.WriteLine(snakeandladder.DieRoll());
-        snakeandladder.Game();
+        private static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Snake and Ladder !");
+            SnakeAndLadders snakeAndLadders = new SnakeAndLadders();
+            snakeAndLadders.Game();
 
 
-
-
-
+        }
     }
 }
