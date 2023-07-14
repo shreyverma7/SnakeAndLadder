@@ -16,47 +16,58 @@ namespace SnakeAndLadder
 
         //uc2 
         Random random = new Random();
-        public int DieRoll()
-        {
-            int diePosition = random.Next(1, 7);
-            Console.WriteLine("Player Position" + " " + this.position);
-            count++;
-            return diePosition;
-        }
-        //uc3
-        public void Game()
-        {
-            while (this.position < WINNING_POSITION)
+
+        //die Function
+            public int DieRoll()
             {
-                int option = random.Next(0, 3);
-                switch (option)
-                {
-                    case NO_PLAY:
-                        break;
-
-                    case LADDER:
-                        int dieRoll = DieRoll();
-                        if (this.position + dieRoll <= WINNING_POSITION)
-                        {
-                            this.position += dieRoll;
-                        }
-                        break;
-
-                    case SNAKE:
-                        dieRoll = DieRoll();
-                        if (this.position - dieRoll < STARTING_POSITION)
-                        {
-                            this.position -= 0;
-                        }
-                        else
-                        {
-                            this.position -= dieRoll;
-                        }
-                        break;
-                }
+                int diePosition = random.Next(1, 7);
+                return diePosition;
             }
-            Console.WriteLine("Number of time  the dice's Played" + " " + count);
-        }
+        //uc3
+            public int Game()
+            {
+                    int option = random.Next(1, 3);
+                    switch (option)
+                    {
+                        case NO_PLAY:
+                        Console.WriteLine(" Position" +" "+ this.position );
+                        count++;
+                        break;
+
+                        case LADDER:
+                            int dieRoll = DieRoll();
+                            if (this.position + dieRoll <= WINNING_POSITION)
+                            {
+                                this.position += dieRoll;
+                            }
+                             Console.WriteLine(" Position" + " " + this.position);
+                            count++;
+                        break;
+
+                        case SNAKE:
+                            dieRoll = DieRoll();
+                            if (this.position - dieRoll < STARTING_POSITION)
+                            {
+                                this.position -= 0;
+                            }
+                            else
+                            {
+                                this.position -= dieRoll;
+                            }
+                        Console.WriteLine(" Position" + " " + this.position);
+                        count++;
+                        break;
+                    }
+       
+                     return this.position;
+             }
+
+        //for count number of time played
+            public int COUNT()
+            {
+                return count;
+
+            }
 
 
     }
